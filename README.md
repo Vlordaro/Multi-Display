@@ -1,33 +1,55 @@
 # Gerenciador de Navegadores Kiosk Multi-Display
 
-## Visão Geral
-Script Python para gerenciar múltiplos navegadores Chrome em modo kiosk, com controles avançados de teclado e recursos de segurança.
+Sistema para gerenciar múltiplos navegadores Chrome em modo kiosk com controles de segurança.
 
-## Funcionalidades Principais
-- Inicia navegadores Chrome em modo kiosk em diferentes monitores
-- Bloqueia teclado especificamente para cada display
-- Senha mestra para desbloquear temporariamente controles de teclado
-- Reinício e fechamento individual de displays
-- Monitora a saúde do navegador e reinicia automaticamente, se necessário
+## Funcionalidades
+
+- Execução em múltiplos monitores
+- Bloqueio de teclas por display
+- Senhas para controle (mestra, encerramento, reinício)
+- Monitoramento e reinício automático
+- Proteção contra interferência do usuário
 
 ## Requisitos
-- Python 3.x
-- Selenium
-- keyboard
-- screeninfo
-- psutil
 
-## Configuração
-1. Instale as dependências:
-  pip install selenium keyboard screeninfo psutil
-2. Configure as configurações de display em `DISPLAY_CONFIG`
-3. Execute o script
+- Python 3.x
+- Chrome/Chromium
+- Bibliotecas Python:
+  - selenium
+  - keyboard
+  - screeninfo 
+  - psutil
+  - python-dotenv
+
+## Instalação
+
+1. Clone o repositório
+2. Instale as dependências:
+  pip install selenium keyboard screeninfo psutil python-dotenv
+
+## Congiguração
+
+Copie .env.example para .env
+Configure as URLs e senhas no .env
+Ajuste monitores em DISPLAY_CONFIG se necessário
 
 ## Uso
-- Fechar display: Use a senha de encerramento específica
-- Desbloquear display: Digite a senha mestra
-- Reiniciar display fechado: Use a senha de reinício
+
+Execute: python main.py
+Controles:
+
+Digite senha mestra: Desbloqueia teclado por 60s
+Digite senha encerrar: Fecha display específico
+Digite senha reiniciar: Reinicia display fechado
+
+
 
 ## Segurança
-- Impede atalhos como Alt+Tab, tecla Windows e outros
-- Desbloqueio temporário de teclado com temporizador
+
+Bloqueia teclas de sistema (Alt, Windows, etc)
+Desbloqueio temporário com timeout
+Senhas configuráveis por display
+Proteção contra fechamento acidental
+
+## Licensa
+MIT
