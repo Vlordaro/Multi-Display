@@ -27,7 +27,7 @@ Sistema para gerenciar múltiplos navegadores Chrome em modo kiosk com controles
 2. Instale as dependências:
   pip install selenium keyboard screeninfo psutil python-dotenv
 
-## Congiguração
+## Configuração
 
 Copie .env.example para .env
 Configure as URLs e senhas no .env
